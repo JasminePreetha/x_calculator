@@ -11,23 +11,6 @@ function Calculator() {
   const handleOperatorClick = (operator) => {
     setInputValue(inputValue + operator);
   };
-
-//   const handleEqualsClick = () => {
-//     try {
-//       // eslint-disable-next-line no-eval
-//       const result = eval(inputValue);
-//       if (result === Infinity) {
-//         setResult('Infinity');
-//       } else if (isNaN(result)) {
-//         setResult('NaN');
-//       } else {
-//         setResult(result);
-//       }
-//     } catch (error) {
-//       setResult('Error');
-//     }
-//   };
-
 const handleEqualsClick = () => {
     try {
       const inputValueTrimmed = inputValue.trim();
