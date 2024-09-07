@@ -12,16 +12,36 @@ function Calculator() {
     setInputValue(inputValue + operator);
   };
 
-  const handleEqualsClick = () => {
+//   const handleEqualsClick = () => {
+//     try {
+//       // eslint-disable-next-line no-eval
+//       const result = eval(inputValue);
+//       if (result === Infinity) {
+//         setResult('Infinity');
+//       } else if (isNaN(result)) {
+//         setResult('NaN');
+//       } else {
+//         setResult(result);
+//       }
+//     } catch (error) {
+//       setResult('Error');
+//     }
+//   };
+
+const handleEqualsClick = () => {
     try {
-      // eslint-disable-next-line no-eval
-      const result = eval(inputValue);
-      if (result === Infinity) {
-        setResult('Infinity');
-      } else if (isNaN(result)) {
-        setResult('NaN');
+      const inputValueTrimmed = inputValue.trim();
+      if (inputValueTrimmed === '') {
+        setResult('Error');
       } else {
-        setResult(result);
+        const result = eval(inputValueTrimmed);
+        if (result === Infinity) {
+          setResult('Infinity');
+        } else if (isNaN(result)) {
+          setResult('NaN');
+        } else {
+          setResult(result);
+        }
       }
     } catch (error) {
       setResult('Error');
